@@ -1,5 +1,6 @@
 import random
 import string
+import os
 from words import words
 
 #get a valid word for the user to guess
@@ -11,7 +12,7 @@ def get_valid_word(words):
 
 #main function to the game
 def main_game():
-    user_name = input('Enter player name to play : ')
+    user_name = input('\nEnter player name to play : ')
     word = get_valid_word(words) #fetches word from words.py
     word_letters = set(word)
     alphabet = set(string.ascii_uppercase)
@@ -38,9 +39,21 @@ def main_game():
             print('\nEnter a valid alphabet')
     if chances == 0: #when the user it out of chances
         print('\nSorry, you are out of chances. The word was ',word)
+        print('\n')
     else:
         print('\nCongratulations ',user_name)
         print('\nThe word is ',word)
+        print('\n')
+
+#how to play and the main game help
+def game_intro():
+    print('\nHow to play\n\n')
+    print('You will have 10 chances to guess the word correctly. You have to start by typing an alphabet and the game will show you whether the alphabet you entered is in the word or not. If it is in the word, the game will display it along with other blanks. But if your guessed alphabet is not in the word then you will lose a chance and the game progreses further with the same logic.\n\n')
+    choiceyorn = input('\nReady (y/n) : ').upper()
+    if choiceyorn == 'y' or choiceyorn == 'Y':
+        main_game()
+    elif choiceyorn == 'n' or choiceyorn == 'N':
+        exit()
 
 if __name__ == '__main__':
-    main_game()
+    game_intro()
