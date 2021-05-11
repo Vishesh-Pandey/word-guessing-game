@@ -54,6 +54,10 @@ def game_intro():
         main_game()
     elif choiceyorn == 'n' or choiceyorn == 'N':
         exit()
+        
+    else:
+        print("Invalid Input")
+        game_intro()
 
 if __name__ == '__main__':
     game_intro()
