@@ -50,9 +50,9 @@ def game_intro():
     print('\nHow to play\n\n')
     print('You will have 10 chances to guess the word correctly. You have to start by typing an alphabet and the game will show you whether the alphabet you entered is in the word or not. If it is in the word, the game will display it along with other blanks. But if your guessed alphabet is not in the word then you will lose a chance and the game progreses further with the same logic.\n\n')
     choiceyorn = input('\nReady (y/n) : ').upper()
-    if choiceyorn == 'y' or choiceyorn == 'Y':
+    if choiceyorn == 'Y':
         main_game()
-    elif choiceyorn == 'n' or choiceyorn == 'N':
+    elif choiceyorn == 'N':
         exit()
         
     else:
